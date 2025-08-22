@@ -15,3 +15,11 @@ Configuración: user.name = pmanavella, user.email = pilarmanavella@gmail.com
   - `git fetch upstream`
   - `git merge upstream/main`
 
+
+## Corrección de error (hotfix)
+
+- Se creó la rama 'hotfix/error-simulacion' desde main.
+- Se simuló un error en producción y se aplicó el fix.
+- Se hizo commit del fix y se subió al fork.
+- Estrategia: merge del hotfix en main y luego en feature/nueva-funcionalidad para mantener sincronización.
+
