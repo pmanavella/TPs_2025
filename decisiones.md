@@ -16,6 +16,7 @@ Configuración: user.name = pmanavella, user.email = pilarmanavella@gmail.com
   - `git merge upstream/main`
 
 
+<<<<<<< HEAD
 ## Desarrollo de nueva funcionalidad
 
 - Se creó la rama 'feature/nueva-funcionalidad' para trabajar de manera aislada a la rama main.
@@ -24,4 +25,12 @@ Configuración: user.name = pmanavella, user.email = pilarmanavella@gmail.com
   1. Agregar archivo inicial de la funcionalidad.
   2. Agregar segunda parte de la funcionalidad.
 - Esta estrategia permite trazabilidad y facilita revisiones de código en equipo.
+=======
+## Corrección de error (hotfix)
+
+- Se creó la rama 'hotfix/error-simulacion' desde main.
+- Se simuló un error en producción y se aplicó el fix.
+- Se hizo commit del fix y se subió al fork.
+- Estrategia: merge del hotfix en main y luego en feature/nueva-funcionalidad para mantener sincronización.
+>>>>>>> main
 
