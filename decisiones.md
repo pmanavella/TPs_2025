@@ -15,3 +15,13 @@ Configuración: user.name = pmanavella, user.email = pilarmanavella@gmail.com
   - `git fetch upstream`
   - `git merge upstream/main`
 
+
+## Desarrollo de nueva funcionalidad
+
+- Se creó la rama 'feature/nueva-funcionalidad' para trabajar de manera aislada a la rama main.
+- Se creó un nuevo archivo funcionalidad.txt que contendrá las líneas de texto enviadas en cada commit a continuación.
+- Se hicieron 2 commits atómicos:
+  1. Agregar archivo inicial de la funcionalidad.
+  2. Agregar segunda parte de la funcionalidad.
+- Esta estrategia permite trazabilidad y facilita revisiones de código en equipo.
+
