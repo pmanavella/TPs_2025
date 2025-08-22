@@ -1,25 +1,61 @@
-Configuración: user.name = pmanavella, user.email = pilarmanavella@gmail.com
+# Decisiones del Proyecto
 
-## Detalle de acciones realizadas hasta el momento
+## Tarea 1: Configurar identidad y repositorio
+- Se hizo un fork al repositorio original, lo consideré más conveniente para tener los permisos completos en mi copia y poder actualizar los cambios.
+- Se clonó el repositorio original.
+- Se configuró el usuario con nombre y correo electrónico.
+- Se creó el archivo `decisiones.md` y se realizó la primera confirmación (commit), sobre el cual estoy escribiendo ahora mismo.
+- Se sincronizó con el repositorio original (upstream) para traer los últimos cambios del repositorio original mediante los comandos:
+    - `git fetch upstream`
+    - `git merge upstream/main`
 
-- Se realizó un fork del repositorio original al inicio para tener una copia completa del repositorio original sin perder los permisos para "pushear" cambios.
-- Se clonó el fork en la máquina local.
-- Se configuraron los datos de usuario de Git:
-  - user.name: pmanavella
-  - user.email: pilarmanavella@gmail.com
-- Se hizo un upstream para mantener mi fork actualizado con el repositorio original, así podré traer los cambios sin romper mi trabajo.
-- Se generó una llave SSH ED25519 para autenticación con GitHub.
-- Para evitar problemas de red y bloqueo de puerto, se cambió el remoto a HTTPS.
-- Se realizó un push exitoso al fork.
-- Se sincronizó la rama `main` con el repositorio original (`upstream`) usando:
-  - `git fetch upstream`
-  - `git merge upstream/main`
+## Tarea 2: Desarrollar una funcionalidad
+- Se creó una nueva rama, usé el formato `feature/... ` para que sea lo más descriptivo posible.
+    - `git checkout -b feature/nueva-funcionalidad`
+- Se realizaron dos commits atómicos:
+    - "Agrego archivo inicial de la nueva funcionalidad"
+    - "Agrego segunda parte de la funcionalidad"
+- Se subió la rama al fork:
+    - `git push origin feature/nueva-funcionalidad`
 
+## Tarea 3: Corrección de error (hotfix)
+- Se vuelve a la rama main:
+    - `git checkout main`
+- Se creó la rama hotfix para simular el error:
+    - `git checkout -b hotfix/error-simulacion`
+- Se simula un error en `funcionalidad.txt`:
+    - `echo "Error simulado para prueba hotfix" >> funcionalidad.txt`
+- Se corrige el error quitando la línea:
+    - `sed -i '' '/Error simulado para prueba hotfix/d' funcionalidad.txt`
+- Se sube hotfix al fork:
+    - `git push origin hotfix/error-simulacion`
 
-## Corrección de error (hotfix)
+## Tarea 4: Hacer Pull Request y aceptarlo
+- Se sube la rama de desarrollo al fork:
+    - `git checkout feature/nueva-funcionalidad`
+    - `git push origin feature/nueva-funcionalidad`
+- Dentro de GitHub:
+    - Se accede al banner “Compare & pull request” para la rama recién subida.
+    - Se elige base: `main` y compare: `feature/nueva-funcionalidad`.
+    - Se asigna el título: **Integración de nueva funcionalidad**, se escribe la descripción y se hace clic en **Create pull request**.
+- Se revisa que las ramas estén actualizadas:
+    - `git checkout main`
+    - `git pull origin main`
 
-- Se creó la rama 'hotfix/error-simulacion' desde main.
-- Se simuló un error en producción y se aplicó el fix.
-- Se hizo commit del fix y se subió al fork.
-- Estrategia: merge del hotfix en main y luego en feature/nueva-funcionalidad para mantener sincronización.
+## Tarea 5: Crear la versión etiquetada
+- Se creó el tag **v1.0** para marcar una versión estable del proyecto mediante:
+```
+git tag -a v1.0 -m "Versión estable 1.0"
+git push origin v1.0
+```
+
+**Convenciones utilizadas:**
+- Utilicé el prefijo **v** antes del número de versión, siguiendo la convención común en control de versiones para indicar que se trata de una *versión*.
+- El número **1.0** indica la primera versión estable del proyecto.
+  - `1` indica que es la primera versión estable (cambios significativos desde el desarrollo inicial).
+  - `0` indica que no hay revisiones menores todavía.
+
+**Razón de la convención:**
+- Se eligió **v1.0** porque representa el primer estado del proyecto listo para uso estable.
+- Esta práctica permite mantener un historial claro, identificar versiones y facilitar actualizaciones o correcciones futuras.
 
